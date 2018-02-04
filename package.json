@@ -1,6 +1,6 @@
 {
   "name": "parse-prop-types",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parses React prop-types into a readable object",
   "license": "MIT",
   "repository": "diegohaz/parse-prop-types",
