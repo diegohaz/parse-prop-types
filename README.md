@@ -12,7 +12,7 @@ Parses React `prop-types` into a readable object
 
 ## Usage
 
-```js
+```jsx
 import React from 'react'
 import PropTypes from 'prop-types'
 import parsePropTypes from 'parse-prop-types'
