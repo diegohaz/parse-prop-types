@@ -63,8 +63,8 @@ Output:
 **Parameters**
 
 -   `$0` **any** 
-    -   `$0.propTypes`  
-    -   `$0.defaultProps`  
+    -   `$0.propTypes`   (optional, default `{}`)
+    -   `$0.defaultProps`   (optional, default `{}`)
 
 Returns **ParsedPropTypes** 
 
