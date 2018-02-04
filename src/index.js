@@ -6,8 +6,8 @@ type PropTypes = {
 }
 
 type Component = {
-  propTypes: PropTypes,
-  defaultProps: {
+  propTypes?: PropTypes,
+  defaultProps?: {
     [key: string]: any,
   },
 }
@@ -51,7 +51,7 @@ const createPropTypeObject = (method: Function, defaultValue?: any): ParsedPropT
 }
 
 /** */
-const parsePropTypes = ({ propTypes, defaultProps }: Component): ParsedPropTypes =>
+const parsePropTypes = ({ propTypes = {}, defaultProps = {} }: Component): ParsedPropTypes =>
   Object.keys(propTypes).reduce((parsed, prop) => {
     const method = propTypes[prop]
     const defaultValue = defaultProps[prop]
