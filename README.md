@@ -23,7 +23,7 @@ const MyComponent = ({ name, show }) => (
 
 MyComponent.propTypes = {
   name: PropTypes.string,
-  show: PropTypes.bool.isRequired,
+  show: PropTypes.oneOfType([PropTypes.bool, propTypes.string]).isRequired,
 }
 
 MyComponent.defaultProps = {
@@ -33,22 +33,37 @@ MyComponent.defaultProps = {
 parsePropTypes(MyComponent)
 ```
 
-Output:
+The returned object is compatible with [`react-docgen`](https://github.com/reactjs/react-docgen):
 
 ```js
 {
   name: {
-    type: 'string',
+    type: {
+      name: 'string',
+    },
     required: false,
-    default: 'Haz',
+    defaultValue: {
+      value: 'Haz',
+    },
   },
   show: {
-    type: 'bool',
+    type: {
+      name: 'oneOfType',
+      value: [
+        { name: 'bool' },
+        { name: 'string' },
+      ],
+    },
     required: true,
-    default: undefined,
-  }
+  },
 }
 ```
+
+## Why not [`react-docgen`](https://github.com/reactjs/react-docgen)?
+
+[`react-docgen`](https://github.com/reactjs/react-docgen) reads file contents in order to find prop types definitions. It has some limitations, such as not allowing computed prop types and, in several situations, not being able to parse file contents correctly.
+
+`parse-prop-types`, on the other hand, doesn't deal with file contents. Instead, it parses prop types at runtime by receiving the component object itself.
 
 ## API
 
@@ -66,7 +81,7 @@ Output:
     -   `$0.propTypes`   (optional, default `{}`)
     -   `$0.defaultProps`   (optional, default `{}`)
 
-Returns **ParsedPropTypes** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
 ## License
 

@@ -8,7 +8,7 @@
   "author": {
     "name": "Diego Haz",
     "email": "hazdiego@gmail.com",
-    "url": "github.com/diegohaz"
+    "url": "https://github.com/diegohaz"
   },
   "engines": {
     "node": ">=6"
@@ -40,15 +40,12 @@
     "build": "src"
   },
   "jest": {
-    "testRegex": "/test/.*",
     "testEnvironment": "node"
   },
   "keywords": [
     "parse-prop-types"
   ],
-  "dependencies": {
-    "prop-types": "^15.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^8.0.0",
@@ -66,6 +63,10 @@
     "jest-cli": "^22.1.4",
     "npm-watch": "^0.3.0",
     "opn-cli": "^3.1.0",
+    "prop-types": "^15.6.0",
     "rimraf": "^2.6.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.0.0"
   }
 }

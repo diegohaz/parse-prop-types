@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parsePropTypes works 1`] = `
+Object {
+  "bar": Object {
+    "defaultValue": Object {
+      "value": false,
+    },
+    "required": false,
+    "type": Object {
+      "name": "bool",
+    },
+  },
+  "baz": Object {
+    "required": true,
+    "type": Object {
+      "name": "arrayOf",
+      "value": Object {
+        "name": "string",
+      },
+    },
+  },
+  "foo": Object {
+    "required": true,
+    "type": Object {
+      "name": "string",
+    },
+  },
+  "foo2": Object {
+    "required": false,
+    "type": Object {
+      "name": "oneOfType",
+      "value": Array [
+        Object {
+          "name": "string",
+        },
+        Object {
+          "name": "shape",
+          "value": Object {
+            "foo": Object {
+              "required": false,
+              "type": Object {
+                "name": "string",
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
+  "quux": Object {
+    "required": false,
+    "type": Object {
+      "name": "shape",
+      "value": Object {
+        "bar": Object {
+          "required": true,
+          "type": Object {
+            "name": "instanceOf",
+            "value": "String",
+          },
+        },
+        "foo": Object {
+          "required": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      },
+    },
+  },
+  "qux": Object {
+    "required": false,
+    "type": Object {
+      "name": "oneOf",
+      "value": Array [
+        "foo",
+        "bar",
+        "baz",
+      ],
+    },
+  },
+}
+`;
+
+exports[`parsePropTypes works without defaultProps 1`] = `
+Object {
+  "bar": Object {
+    "required": false,
+    "type": Object {
+      "name": "bool",
+    },
+  },
+  "baz": Object {
+    "required": true,
+    "type": Object {
+      "name": "arrayOf",
+      "value": Object {
+        "name": "string",
+      },
+    },
+  },
+  "foo": Object {
+    "required": true,
+    "type": Object {
+      "name": "string",
+    },
+  },
+  "foo2": Object {
+    "required": false,
+    "type": Object {
+      "name": "oneOfType",
+      "value": Array [
+        Object {
+          "name": "string",
+        },
+        Object {
+          "name": "shape",
+          "value": Object {
+            "foo": Object {
+              "required": false,
+              "type": Object {
+                "name": "string",
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
+  "quux": Object {
+    "required": false,
+    "type": Object {
+      "name": "shape",
+      "value": Object {
+        "bar": Object {
+          "required": true,
+          "type": Object {
+            "name": "instanceOf",
+            "value": "String",
+          },
+        },
+        "foo": Object {
+          "required": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      },
+    },
+  },
+  "qux": Object {
+    "required": false,
+    "type": Object {
+      "name": "oneOf",
+      "value": Array [
+        "foo",
+        "bar",
+        "baz",
+      ],
+    },
+  },
+}
+`;
