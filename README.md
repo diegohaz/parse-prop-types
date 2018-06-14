@@ -4,7 +4,7 @@
 [![NPM version](https://img.shields.io/npm/v/parse-prop-types.svg?style=flat-square)](https://npmjs.org/package/parse-prop-types)
 [![Build Status](https://img.shields.io/travis/diegohaz/parse-prop-types/master.svg?style=flat-square)](https://travis-ci.org/diegohaz/parse-prop-types) [![Coverage Status](https://img.shields.io/codecov/c/github/diegohaz/parse-prop-types/master.svg?style=flat-square)](https://codecov.io/gh/diegohaz/parse-prop-types/branch/master)
 
-Parses React `prop-types` into a readable object
+Parses React `prop-types` into a readable object at runtime.
 
 ## Install
 
