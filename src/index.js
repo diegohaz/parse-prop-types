@@ -1,6 +1,7 @@
 // @flow
 /* eslint-disable no-param-reassign, no-use-before-define */
 import T from "prop-types";
+import "./ensureDevPropTypes";
 
 const mutatePropType = (name: string, object: Object = T[name]): void => {
   object.type = { ...object.type, name };
@@ -19,22 +20,22 @@ const mutatePropTypeFn = (name: string): void => {
   const original = T[name];
   T[name] = arg => {
     const object = original(arg);
-    // arrayOf
     if (typeof arg === "function" && arg.name.indexOf("checkType") >= 0) {
+      // arrayOf
       object.type = { value: parsePropTypeMethod(arg).type };
-      // instanceOf
     } else if (typeof arg === "function") {
+      // instanceOf
       object.type = { value: arg.name };
-      // oneOfType
     } else if (Array.isArray(arg) && typeof arg[0] === "function") {
+      // oneOfType
       object.type = {
         value: arg.map(method => parsePropTypeMethod(method).type)
       };
-      // shape
     } else if (!Array.isArray(arg) && typeof arg === "object") {
+      // shape
       object.type = { value: parsePropTypes({ propTypes: arg }) };
-      // oneOf
     } else {
+      // oneOf
       object.type = { value: arg };
     }
     mutatePropType(name, object);
