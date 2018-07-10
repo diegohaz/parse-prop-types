@@ -31,7 +31,11 @@
     "postpublish": "git push origin master --follow-tags"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/ensureDevPropTypes.js"
+    ]
   },
   "keywords": [
     "parse-prop-types",
