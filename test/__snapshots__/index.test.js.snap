@@ -83,6 +83,25 @@ Object {
 }
 `;
 
+exports[`parsePropTypes works with propDescriptions 1`] = `
+Object {
+  "bar": Object {
+    "description": "True or false",
+    "required": false,
+    "type": Object {
+      "name": "bool",
+    },
+  },
+  "foo": Object {
+    "description": "Important string",
+    "required": true,
+    "type": Object {
+      "name": "string",
+    },
+  },
+}
+`;
+
 exports[`parsePropTypes works without defaultProps 1`] = `
 Object {
   "bar": Object {

@@ -38,4 +38,19 @@ describe("parsePropTypes", () => {
     const Component = {};
     expect(parsePropTypes(Component)).toEqual({});
   });
+
+  it("works with propDescriptions", () => {
+    const Component = {
+      propTypes: {
+        foo: PropTypes.string.isRequired,
+        bar: PropTypes.bool
+      },
+      propDescriptions: {
+        foo: "Important string",
+        bar: "True or false"
+      }
+    };
+
+    expect(parsePropTypes(Component)).toMatchSnapshot();
+  });
 });

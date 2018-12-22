@@ -54,28 +54,36 @@ Object.keys(T)
 
 const parsePropTypeMethod = (
   { isRequired, ...method }: Object,
-  value?: any
+  value?: any,
+  description?: String
 ): Object => ({
   type: {
     name: "custom"
   },
   required: false,
   ...(typeof value !== "undefined" ? { defaultValue: { value } } : {}),
+  ...(typeof description !== "undefined" ? { description } : {}),
   ...method
 });
 
 /** */
 const parsePropTypes = ({
   propTypes = {},
-  defaultProps = {}
+  defaultProps = {},
+  propDescriptions = {}
 }: {
   propTypes?: Object,
-  defaultProps?: Object
+  defaultProps?: Object,
+  propDescriptions?: Object
 }): Object =>
   Object.keys(propTypes).reduce(
     (parsed, prop) => ({
       ...parsed,
-      [prop]: parsePropTypeMethod(propTypes[prop], defaultProps[prop])
+      [prop]: parsePropTypeMethod(
+        propTypes[prop],
+        defaultProps[prop],
+        propDescriptions[prop]
+      )
     }),
     {}
   );

@@ -59,6 +59,14 @@ The returned object is compatible with [`react-docgen`](https://github.com/react
 }
 ```
 
+If you also need the property `description` (as provided by `react-docgen`) you can add it using the proprietary `propDescriptions` object:
+
+```jsx
+MyComponent.propDescriptions = {
+  name: 'The name'
+}
+```
+
 ## Why not [`react-docgen`](https://github.com/reactjs/react-docgen)?
 
 [`react-docgen`](https://github.com/reactjs/react-docgen) reads file contents in order to find prop types definitions. It has some limitations, such as not allowing computed prop types and, in several situations, not being able to parse file contents correctly.
@@ -77,11 +85,11 @@ The returned object is compatible with [`react-docgen`](https://github.com/react
 
 **Parameters**
 
--   `$0` **any** 
+-   `$0` **any**
     -   `$0.propTypes`   (optional, default `{}`)
     -   `$0.defaultProps`   (optional, default `{}`)
 
-Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
 
 ## License
 
