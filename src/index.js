@@ -53,7 +53,7 @@ Object.keys(T)
   });
 
 const parsePropTypeMethod = (
-  { isRequired, ...method }: Object,
+  { isRequired, ...method } : Object = {},
   value?: any
 ): Object => ({
   type: {
